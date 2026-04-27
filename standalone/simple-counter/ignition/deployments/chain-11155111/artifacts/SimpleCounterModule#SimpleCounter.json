@@ -1,0 +1,78 @@
+{
+  "_format": "hh3-artifact-1",
+  "contractName": "SimpleCounter",
+  "sourceName": "contracts/SimpleCounter.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "initialNumber",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "updatedNumber",
+          "type": "uint256"
+        }
+      ],
+      "name": "NumberDecremented",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "updatedNumber",
+          "type": "uint256"
+        }
+      ],
+      "name": "NumberIncremented",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "decrement",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "increment",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "number",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6080604052348015600e575f5ffd5b506040516101cf3803806101cf833981016040819052602b916031565b5f556047565b5f602082840312156040575f5ffd5b5051919050565b61017b806100545f395ff3fe608060405234801561000f575f5ffd5b506004361061003f575f3560e01c80632baeceb7146100435780638381f58a1461004d578063d09de08a14610067575b5f5ffd5b61004b61006f565b005b6100555f5481565b60405190815260200160405180910390f35b61004b6100bd565b60015f5f8282546100809190610119565b90915550505f546040519081527fbad136607945e6d9a17279e7185ec9db741dda16b98375b35aff04d51f96db8f906020015b60405180910390a1565b60015f5f8282546100ce9190610132565b90915550505f546040519081527f209c6035516d19d8e68fcdb2bf5bd0a95b70e35f6ca85925c34b9cdfdd713960906020016100b3565b634e487b7160e01b5f52601160045260245ffd5b8181038181111561012c5761012c610105565b92915050565b8082018082111561012c5761012c61010556fea2646970667358221220ee7decd19a305ef27c6ac0d60b01dab7d80dba76820315382f65ae6c66a2211564736f6c634300081c0033",
+  "deployedBytecode": "0x608060405234801561000f575f5ffd5b506004361061003f575f3560e01c80632baeceb7146100435780638381f58a1461004d578063d09de08a14610067575b5f5ffd5b61004b61006f565b005b6100555f5481565b60405190815260200160405180910390f35b61004b6100bd565b60015f5f8282546100809190610119565b90915550505f546040519081527fbad136607945e6d9a17279e7185ec9db741dda16b98375b35aff04d51f96db8f906020015b60405180910390a1565b60015f5f8282546100ce9190610132565b90915550505f546040519081527f209c6035516d19d8e68fcdb2bf5bd0a95b70e35f6ca85925c34b9cdfdd713960906020016100b3565b634e487b7160e01b5f52601160045260245ffd5b8181038181111561012c5761012c610105565b92915050565b8082018082111561012c5761012c61010556fea2646970667358221220ee7decd19a305ef27c6ac0d60b01dab7d80dba76820315382f65ae6c66a2211564736f6c634300081c0033",
+  "linkReferences": {},
+  "deployedLinkReferences": {},
+  "immutableReferences": {},
+  "inputSourceName": "project/contracts/SimpleCounter.sol",
+  "buildInfoId": "solc-0_8_28-ac49a9d23a772bd3414f143754dcb26f7562cec4"
+}

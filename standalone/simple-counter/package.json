@@ -18,6 +18,6 @@
     "typescript": "~5.8.0"
   },
   "scripts": {
-    "deploy": "npx hardhat ignition deploy ./ignition/modules/SimpleCounter.ts"
+    "deploy": "npx hardhat ignition deploy ./ignition/modules/SimpleCounter.ts --network sepolia"
   }
 }

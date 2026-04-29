@@ -7,7 +7,9 @@ import { SimpleCounter__factory } from "../../standalone/simple-counter/types/et
 const main = async () => {
   const wsUrl = process.env.ALCHEMY_WSS_URL || process.env.RPC_URL;
   if (!wsUrl || !wsUrl.startsWith("wss")) {
-    throw new Error("Missing WebSocket URL. Set ALCHEMY_WSS_URL to a wss:// endpoint.");
+    throw new Error(
+      "Missing WebSocket URL. Set ALCHEMY_WSS_URL to a wss:// endpoint.",
+    );
   }
 
   const provider = new ethers.WebSocketProvider(wsUrl);
@@ -16,7 +18,7 @@ const main = async () => {
   console.log("Listening for events from contract ....:");
 
   try {
-    contract.on(contract.filters['NumberIncremented'], (updatedNumber) => {
+    contract.on(contract.filters["NumberIncremented"], (updatedNumber) => {
       console.log("Number incremented:", updatedNumber);
     });
   } catch (error) {
@@ -24,7 +26,7 @@ const main = async () => {
   }
 
   try {
-    contract.on(contract.filters['NumberDecremented'], (updatedNumber) => {
+    contract.on(contract.filters["NumberDecremented"], (updatedNumber) => {
       console.log("Number decremented:", updatedNumber);
     });
   } catch (error) {
@@ -36,4 +38,3 @@ main().catch((error) => {
   console.error("Listener failed:", error);
   process.exitCode = 1;
 });
-

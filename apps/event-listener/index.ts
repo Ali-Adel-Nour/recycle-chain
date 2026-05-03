@@ -2,7 +2,7 @@ import "dotenv/config";
 import { ethers } from "ethers";
 import { contractAddress } from "./util.ts";
 
-import { SimpleCounter__factory } from "../../standalone/simple-counter/types/ethers-contracts/factories/SimpleCounter__factory.ts";
+import { SimpleCounter__factory } from "../../standalone/simple-counter-contract/types/ethers-contracts/factories/SimpleCounter__factory.ts";
 
 const main = async () => {
   const wsUrl = process.env.ALCHEMY_WSS_URL || process.env.RPC_URL;

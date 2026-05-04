@@ -6,7 +6,7 @@ import type { TypedContractEvent, TypedDeferredTopicFilter, TypedEventLog, Typed
   
 
   export interface RecycleChainInterface extends Interface {
-    getFunction(nameOrSignature: "addProduct" | "addProductItems" | "inventory" | "manufacturers" | "owner" | "productCounter" | "productItems" | "products" | "registerManufacturer" | "returnProductItems" | "sellProductItems"): FunctionFragment;
+    getFunction(nameOrSignature: "addProduct" | "addProductItems" | "inventory" | "manufacturers" | "owner" | "productCounter" | "productItems" | "products" | "recycleProductItems" | "registerManufacturer" | "returnProductItems" | "sellProductItems"): FunctionFragment;
 
     getEvent(nameOrSignatureOrTopic: "ManufacturerRegistered" | "ProductCreated" | "ProductItemAdded" | "ProductItemsStateChanged" | "ToxicItemCreated"): EventFragment;
 
@@ -18,6 +18,7 @@ encodeFunctionData(functionFragment: 'owner', values?: undefined): string;
 encodeFunctionData(functionFragment: 'productCounter', values?: undefined): string;
 encodeFunctionData(functionFragment: 'productItems', values: [string]): string;
 encodeFunctionData(functionFragment: 'products', values: [BigNumberish]): string;
+encodeFunctionData(functionFragment: 'recycleProductItems', values: [string[]]): string;
 encodeFunctionData(functionFragment: 'registerManufacturer', values: [string, string, string]): string;
 encodeFunctionData(functionFragment: 'returnProductItems', values: [string[]]): string;
 encodeFunctionData(functionFragment: 'sellProductItems', values: [string[]]): string;
@@ -30,6 +31,7 @@ decodeFunctionResult(functionFragment: 'owner', data: BytesLike): Result;
 decodeFunctionResult(functionFragment: 'productCounter', data: BytesLike): Result;
 decodeFunctionResult(functionFragment: 'productItems', data: BytesLike): Result;
 decodeFunctionResult(functionFragment: 'products', data: BytesLike): Result;
+decodeFunctionResult(functionFragment: 'recycleProductItems', data: BytesLike): Result;
 decodeFunctionResult(functionFragment: 'registerManufacturer', data: BytesLike): Result;
 decodeFunctionResult(functionFragment: 'returnProductItems', data: BytesLike): Result;
 decodeFunctionResult(functionFragment: 'sellProductItems', data: BytesLike): Result;
@@ -194,6 +196,14 @@ decodeFunctionResult(functionFragment: 'sellProductItems', data: BytesLike): Res
     
 
     
+    recycleProductItems: TypedContractMethod<
+      [_itemIds: string[], ],
+      [void],
+      'nonpayable'
+    >
+    
+
+    
     registerManufacturer: TypedContractMethod<
       [_name: string, _location: string, _contact: string, ],
       [void],
@@ -259,6 +269,11 @@ getFunction(nameOrSignature: 'products'): TypedContractMethod<
       [arg0: BigNumberish, ],
       [[bigint, string, bigint, string] & {id: bigint, name: string, quantity: bigint, manufacturer: string }],
       'view'
+    >;
+getFunction(nameOrSignature: 'recycleProductItems'): TypedContractMethod<
+      [_itemIds: string[], ],
+      [void],
+      'nonpayable'
     >;
 getFunction(nameOrSignature: 'registerManufacturer'): TypedContractMethod<
       [_name: string, _location: string, _contact: string, ],

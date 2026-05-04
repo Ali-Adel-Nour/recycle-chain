@@ -158,5 +158,18 @@ contract RecycleChain {
 
     emit ProductItemsStateChanged(_itemIds, ProductState.Returned);
   }
+
+  function recycleProductItems(string[] memory _itemIds) public {
+    for (uint256 i = 0; i < _itemIds.length; i++) {
+      string memory itemId = _itemIds[i];
+      ProductItem storage item = productItems[itemId];
+      require(item.productId != 0, "Product item does not exist");
+      require(item.state == ProductState.Returned, "Only returned items can be recycled");
+
+      item.state = ProductState.Recycled;
+    }
+
+    emit ProductItemsStateChanged(_itemIds, ProductState.Recycled);
+  }
   
 }
